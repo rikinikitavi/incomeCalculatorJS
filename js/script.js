@@ -1,3 +1,5 @@
+"use strict";
+
 let startBtn = document.getElementById("start"),
     budgetValue = document.getElementsByClassName('budget-value')[0],
     daybudgetValue = document.getElementsByClassName('daybudget-value')[0],
@@ -19,3 +21,32 @@ let startBtn = document.getElementById("start"),
     yearValue = document.querySelector('choose-year'),
     monthValue = document.querySelector('choose-month'),
     dayValue = document.querySelector('choose-day');
+
+let money, time;
+
+startBtn.addEventListener('click', function() {
+    money = +prompt('Ваш бюджет на месяц?', '');
+    time = prompt('Введите дату в формате YYYY-MM-DD!', '');
+
+    while (isNaN(money) || money == '' || money == null) {
+        money = +prompt('Ваш бюджет на месяц?', '');
+    }
+    appData.budget = money;
+    appData.timeData = time;
+    budgetValue.textContent = money.toFixed();
+});
+
+let appData = {
+    budget: money,
+    expenses: {},
+    optionalexpenses: {},
+    income: [],
+    timeData: time,
+    savings: true,
+    chooseExpenses: function() {
+        for (let i = 0; i < 2; i++) {
+            let a = prompt('Введите обязательную статью расходов в этом месяце?', ''),
+                b = prompt('Во сколько это обойдется?', '');
+        }
+    }
+}
