@@ -10,17 +10,19 @@
     <div class="logo">
         <span>Money</span> keeper
     </div>
-    <div class="title">
-        Расчет дневного бюджета
-    </div>
     <div class="main">
         <div class="data">
             <div class="input">
-                <div class="count-budget">Расчет дневного бюджета</div>
-                <button class="count-budget-btn">Рассчитать</button>
+                <div class="count-budget"><h1>Расчет дневного бюджета</h1></div>
+ 
+                    <button class="start" id="start">Начать расчет</button>
+
+
+
+                
 
                 <div class="choose-income-label">Введите статьи возможного дохода</div>
-                <input type="text" id="income" class="choose-income">
+                <input type="text" class="choose-income">
 
                 <div class="check-savings">Есть ли накопления:
                     <input type="checkbox" id="savings">
@@ -30,10 +32,25 @@
                 <label for="percent">Процент</label>
                 <input type="text" id="percent" class="choose-percent">
 
-                <div class="open">
-                    <button class="start" id="start">Начать расчет</button>
+
+            </div>
+
+            <div class="time-data">
+                <div class="year">
+                    Год:
+                    <input type="text" class="year-value" readonly>
+                </div>
+                <div class="month">
+                    Месяц:
+                    <input type="text" class="month-value" readonly>
+                </div>
+                <div class="day">
+                    День:
+                    <input type="text" class="day-value" readonly>
                 </div>
             </div>
+
+            <button class="count-budget-btn">Рассчитать</button>
 
             <div class="result">
                 <div class="result-table">
@@ -61,20 +78,7 @@
                     <div class="yearsavings">Накопления за 1 год: </div>
                     <div class="yearsavings-value"></div>
                 </div>
-                <div class="time-data">
-                    <div class="year">
-                        Год:
-                        <input type="text" class="year-value" readonly>
-                    </div>
-                    <div class="month">
-                        Месяц:
-                        <input type="text" class="month-value" readonly>
-                    </div>
-                    <div class="day">
-                        День:
-                        <input type="text" class="day-value" readonly>
-                    </div>
-                </div>
+                
             </div>
         </div>
     </div>

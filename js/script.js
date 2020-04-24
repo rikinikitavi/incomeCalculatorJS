@@ -9,10 +9,10 @@ let startBtn = document.getElementById("start"),
     yearSavingsValue = document.getElementsByClassName('yearsavings-value')[0],
 
 
-	expensesItem = document.getElementsByClassName('expenses-item'),
-	expensesBtn = document.getElementsByTagName('button')[0],
-	optionalExpensesBtn = document.getElementsByTagName('button')[1],
-    countBtn = document.getElementsByTagName('button')[2],
+	//expensesItem = document.getElementsByClassName('expenses-item'),
+	//expensesBtn = document.getElementsByTagName('button')[0],
+	//optionalExpensesBtn = document.getElementsByTagName('button')[1],
+    countBtn = document.getElementsByTagName('button')[1],
     optionalExpensesItem = document.querySelectorAll('.optionalexpenses-item'),
 	incomeItem = document.querySelector('.choose-income'),
 	checkSavings = document.querySelector('#savings'),
@@ -24,8 +24,7 @@ let startBtn = document.getElementById("start"),
 
 let money, time;
 
-expensesBtn.disabled = true;
-optionalExpensesBtn.disabled = true;
+
 countBtn.disabled = true;
 
 startBtn.addEventListener('click', () => {
@@ -42,34 +41,32 @@ startBtn.addEventListener('click', () => {
     monthValue.value = new Date(Date.parse(time)).getMonth() + 1;
     dayValue.value = new Date(Date.parse(time)).getDate();
 
-    expensesBtn.disabled = false;
-    optionalExpensesBtn.disabled = false;
     countBtn.disabled = false;
 });
 
-expensesBtn.addEventListener('click', () => {
-    let sum = 0;
-    for (let i = 0; i < expensesItem.length; i++) {
-        let a = expensesItem[i].value,
-            b = expensesItem[++i].value;
+// expensesBtn.addEventListener('click', () => {
+//     let sum = 0;
+//     for (let i = 0; i < expensesItem.length; i++) {
+//         let a = expensesItem[i].value,
+//             b = expensesItem[++i].value;
 
-        if ((typeof (a)) != null && (typeof (b)) != null && a != '' && b != '' && a.length < 50) {
-            appData.expenses[a] = b;
-            sum += +b;
-        } else {
-            i = i - 1;
-        }
-        expensesValue.textContent = sum;
-    }
-});
+//         if ((typeof (a)) != null && (typeof (b)) != null && a != '' && b != '' && a.length < 50) {
+//             appData.expenses[a] = b;
+//             sum += +b;
+//         } else {
+//             i = i - 1;
+//         }
+//         expensesValue.textContent = sum;
+//     }
+// });
 
-optionalExpensesBtn.addEventListener('click', () => {
-    for (let i = 0; i < optionalExpensesItem.length; i++) {
-		let opt = optionalExpensesItem[i].value;
-        appData.optionalExpenses[i] = opt;
-        optionalExpensesValue.textContent += appData.optionalExpenses[i] + ' ';
-	}
-});
+// optionalExpensesBtn.addEventListener('click', () => {
+//     for (let i = 0; i < optionalExpensesItem.length; i++) {
+// 		let opt = optionalExpensesItem[i].value;
+//         appData.optionalExpenses[i] = opt;
+//         optionalExpensesValue.textContent += appData.optionalExpenses[i] + ' ';
+// 	}
+// });
 
 countBtn.addEventListener('click', () => {
     if (appData.budget != undefined) {
@@ -137,3 +134,4 @@ const appData = {
     savings: false
 };
 
+g
